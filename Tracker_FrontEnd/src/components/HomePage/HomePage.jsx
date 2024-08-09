@@ -3,6 +3,8 @@ import {Stack,Box, Typography, Divider} from '@mui/material'
 import { FaOpencart } from "react-icons/fa";
 import { GiPayMoney } from "react-icons/gi";
 import { GiReceiveMoney } from "react-icons/gi";
+import { TbPigMoney } from "react-icons/tb";
+import { TbMoneybag } from "react-icons/tb";
 import BasicTable from './TransactionTable';
 import QuickAcess from './QuickAcess';
 import Graph from '../Graph';
@@ -53,9 +55,9 @@ const Homepage = () => {
                     </Stack>
                     <Stack gap={2} direction={'row'} justifyContent={'space-between'} alignContent={'center'}>
                         <Box display={'flex'} gap={1} ml={1}>
-                        <FaOpencart />
+                        <TbPigMoney />
                         <Typography fontSize={11} fontWeight={'bold'}>
-                            Upcoming Tasks
+                            Balance Left
                         </Typography>
                         </Box>
                         
@@ -65,9 +67,9 @@ const Homepage = () => {
                     </Stack>
                     <Stack gap={2} direction={'row'} justifyContent={'space-between'} alignContent={'center'}>
                         <Box display={'flex'} gap={1} ml={1}>
-                        <FaOpencart />
+                        <TbMoneybag/>
                         <Typography fontSize={11} fontWeight={'bold'}>
-                            Upcoming Tasks
+                            Total Spent
                         </Typography>
                         </Box>
                         <Typography marginLeft={20} fontSize={11}  fontWeight={'bold'}>

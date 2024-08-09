@@ -4,6 +4,7 @@ import { TbHomeDollar } from "react-icons/tb";
 import { GiMoneyStack } from "react-icons/gi";
 import { GiReceiveMoney } from "react-icons/gi";
 import { TbLogout2 } from "react-icons/tb";
+import { FaMoneyBillTransfer } from "react-icons/fa6";
 const SideBar = () => {
   return (
     <Box borderRight={"1px solid white"} >
@@ -23,6 +24,12 @@ const SideBar = () => {
                     <GiMoneyStack size={30} />
                     <Typography fontSize={18}>
                         Expenses
+                    </Typography>
+                </Stack>
+                <Stack direction={'row'} alignItems={'center'} gap={2}>
+                    <FaMoneyBillTransfer size={30} />
+                    <Typography fontSize={18}>
+                        History
                     </Typography>
                 </Stack>
                 <Stack direction={'row'} alignItems={'center'} gap={2}>

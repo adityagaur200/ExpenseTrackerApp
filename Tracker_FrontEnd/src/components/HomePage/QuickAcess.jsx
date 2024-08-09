@@ -4,6 +4,7 @@ import {Button} from "@mui/joy"
 import { GiTakeMyMoney } from "react-icons/gi";
 import { GiReceiveMoney } from "react-icons/gi";
 import { MdAddTask } from "react-icons/md";
+import { TbReportMoney } from "react-icons/tb";
 const QuickAcess = () => {
   return (
     <>
@@ -27,7 +28,7 @@ const QuickAcess = () => {
                     </Typography>
                 </Button>
                 <Button color="neutral" size="lg" variant="soft" style={{width:"180px",height:"70px"}}>
-                    <MdAddTask size={{width:"20px"}} />
+                    <TbReportMoney size={{width:"20px"}} />
                     <Typography fontSize={14} fontWeight={"bold"}>
                         +Tasks
                     </Typography>
