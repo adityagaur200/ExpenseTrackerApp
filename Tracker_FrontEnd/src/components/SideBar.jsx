@@ -5,11 +5,12 @@ import { GiMoneyStack } from "react-icons/gi";
 import { GiReceiveMoney } from "react-icons/gi";
 import { TbLogout2 } from "react-icons/tb";
 import { FaMoneyBillTransfer } from "react-icons/fa6";
+import { TbReportMoney } from "react-icons/tb";
 import { Link } from 'react-router-dom';
 const SideBar = () => {
   return (
   
-    <Box borderRight={"1px solid white"} >
+    <Box borderRight={"1px solid white"}>
         <Stack ml={2} mr={3} >
             <Avatar sx={{width:"100px", height:"100px",mt:"25px",ml:"55px"}}/>
             <Typography fontSize={15} fontWeight={"bold"} mt={2} ml={7}>
@@ -47,9 +48,17 @@ const SideBar = () => {
                             Loans
                         </Typography>
                     </Stack>
-                </Link>    
+                </Link>
+                <Link to={'/Task'} style={{textDecoration:'none',color:"inherit"}}>
+                    <Stack direction={'row'} alignItems={'center'} gap={2}>
+                        <TbReportMoney size={30}/>
+                        <Typography fontSize={18}>
+                            Task
+                        </Typography>
+                    </Stack>
+                </Link>        
             </Stack>
-            <Stack direction={'row'} gap={2} mt={40} justifyContent={'center'}>
+            <Stack direction={'row'} gap={2} mt={30} justifyContent={'center'}>
                 <TbLogout2 size={30}/>
                     <Typography fontSize={18}>
                     LogOut
