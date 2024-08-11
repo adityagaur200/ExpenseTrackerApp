@@ -12,7 +12,6 @@ const LoanIn = () => {
                     </Typography> 
                     <GiPayMoney size={25}/>
                 </Stack>
-                <Button variant='outlined' size='sm'>Add</Button>
             </Stack>
             <Divider/>
                     <Box borderRadius={2} border={'2px solid white'} width={500}>

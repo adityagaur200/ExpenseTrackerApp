@@ -8,7 +8,7 @@ const AddForm = () => {
         Date:"",
     }])
   return (
-    <Box border={'2px solid white'} borderRadius={2} justifyContent={'center'} mb={2}>
+    <Box border={'2px solid white'} borderRadius={2} justifyContent={'center'} mb={2} width={400} height={400} ml={50}>
     <Stack gap={2} m={5}>
         <Stack direction={'row'} gap={2} alignItems={'center'}>
             <Typography>
@@ -34,7 +34,7 @@ const AddForm = () => {
             </Button>
         </Stack>
     </Stack>
-</Box>
+    </Box>
   )
 }
 
