@@ -49,11 +49,11 @@ const SideBar = () => {
                         </Typography>
                     </Stack>
                 </Link>
-                <Link to={'/Task'} style={{textDecoration:'none',color:"inherit"}}>
+                <Link to={'/Budget'} style={{textDecoration:'none',color:"inherit"}}>
                     <Stack direction={'row'} alignItems={'center'} gap={2}>
                         <TbReportMoney size={30}/>
                         <Typography fontSize={18}>
-                            Task
+                            Budget
                         </Typography>
                     </Stack>
                 </Link>        

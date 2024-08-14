@@ -14,7 +14,7 @@ function App() {
           <Route path="/" element={<Homepage />} />
           <Route path="/Transaction" element={<TransactionPage/>}/>
           <Route path="/Add" element={<AddTransaction/>}/>
-          <Route path="/Task" element={<Tasks/>}/>
+          <Route path="/Budget" element={<Tasks/>}/>
           <Route path="/Loans" element={<LoanPage/>}/>
         </Routes>
       </Layout>

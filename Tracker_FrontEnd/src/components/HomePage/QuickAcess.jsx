@@ -29,10 +29,10 @@ const QuickAcess = () => {
                         +Loan
                     </Typography>
                 </Button>
-                <Button color="neutral" size="lg" variant="soft" style={{width:"180px",height:"70px"}} onClick={()=>navigate('/Task')}>
+                <Button color="neutral" size="lg" variant="soft" style={{width:"180px",height:"70px"}} onClick={()=>navigate('/Budget')}>
                     <TbReportMoney size={{width:"20px"}} />
                     <Typography fontSize={14} fontWeight={"bold"}>
-                        +Tasks
+                        +Budget
                     </Typography>
                 </Button>
                 </Stack>

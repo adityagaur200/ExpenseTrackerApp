@@ -16,6 +16,11 @@ const AddTransaction = () =>
         Description:"",
         Category:"",
     })
+    
+    const handleAddExpenses = () =>
+    {
+        console.log(inputs)
+    }
   return (
     <Box border={"1px solid white"} borderRadius={2} sx={{width:"500px"}} m={"auto"} mt={6}>
       <Stack gap={2} m={3}>
@@ -23,7 +28,7 @@ const AddTransaction = () =>
             <Typography fontSize={20} fontWeight={"bold"}>
                 ADD TRANSACTION
             </Typography>
-            <Button variant='outlined'>Add</Button>
+            <Button variant='outlined' onClick={handleAddExpenses}>Add</Button>
         </Stack>
         <Divider/>
         <Stack direction={'row'} gap={1} alignItems={'center'}>

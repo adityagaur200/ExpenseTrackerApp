@@ -1,4 +1,31 @@
 package com.tracker.trackerbackend.controller;
 
-public class ExpenseController {
+import com.tracker.trackerbackend.model.Expense;
+import com.tracker.trackerbackend.service.ExpenseService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@CrossOrigin
+@RequestMapping("/")
+public class ExpenseController
+{
+    @Autowired
+    private ExpenseService service;
+
+    @GetMapping("/History")
+    public List<Expense>getExpense()
+    {
+        return service.getAllExpense();
+    }
+
+    @PostMapping("/add")
+    public Expense addExpense(@RequestBody Expense expense)
+    {
+        return service.addAllExpense(expense);
+    }
+
+
 }

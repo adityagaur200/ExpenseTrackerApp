@@ -6,6 +6,11 @@ const Tasks = () => {
         Date:'',
         Amount:"",
     }])
+
+    const handleAddBudget = () =>
+    {
+        console.log(inputs)
+    }
   return (
     <Box borderRadius={2} border={'2px solid white'} m={4} >  
         <Stack gap={2}>
@@ -111,9 +116,9 @@ const Tasks = () => {
                     <Stack gap={2} m={5}>
                         <Stack direction={'row'} gap={2} alignItems={'center'}>
                             <Typography>
-                                Name :
+                                Month :
                             </Typography>
-                            <TextField placeholder='Name' value={inputs.Name} type='name' variant='outlined' onChange={(e)=>setinputs(...inputs,e.target.value)}/>
+                            <TextField placeholder='Month' value={inputs.Name} type='name' variant='outlined' onChange={(e)=>setinputs(...inputs,e.target.value)}/>
                         </Stack>
                         <Stack direction={'row'} alignItems={'center'} gap={2}>
                             <Typography>
@@ -128,7 +133,7 @@ const Tasks = () => {
                             <TextField placeholder='Amount' value={inputs.Amount} type='name' variant='outlined' onChange={(e)=>setinputs(...inputs,e.target.value)}/>
                         </Stack>
                         <Stack>
-                            <Button variant='outlined'>
+                            <Button variant='outlined' onClick={handleAddBudget}>
                                 Add
                             </Button>
                         </Stack>
