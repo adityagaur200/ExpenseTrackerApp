@@ -1,5 +1,5 @@
 import { Box, Button, Divider, Stack, TextField, Typography } from '@mui/material'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { MdOutlineDriveFileRenameOutline } from "react-icons/md";
 import { FaMoneyBill } from "react-icons/fa6";
 import { SlCalender } from "react-icons/sl";
@@ -17,10 +17,14 @@ const AddTransaction = () =>
         Category:"",
     })
     
-    const handleAddExpenses = () =>
+    const handleAddExpenses = async () =>
     {
-        console.log(inputs)
-    }
+        const url = "http://localhost:8080/expense/history"
+        const data = await fetch(url)
+        const jsonData = data.json()
+        console.log(jsonData)
+        
+    }  
   return (
     <Box border={"1px solid white"} borderRadius={2} sx={{width:"500px"}} m={"auto"} mt={6}>
       <Stack gap={2} m={3}>

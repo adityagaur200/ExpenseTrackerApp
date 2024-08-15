@@ -9,13 +9,13 @@ import java.util.List;
 
 @RestController
 @CrossOrigin
-@RequestMapping("/")
+@RequestMapping("/expense")
 public class ExpenseController
 {
     @Autowired
     private ExpenseService service;
 
-    @GetMapping("/History")
+    @GetMapping("/history")
     public List<Expense>getExpense()
     {
         return service.getAllExpense();
@@ -26,6 +26,5 @@ public class ExpenseController
     {
         return service.addAllExpense(expense);
     }
-
 
 }
