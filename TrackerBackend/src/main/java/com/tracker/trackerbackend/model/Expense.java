@@ -15,13 +15,12 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Expense
 {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private String description;
-    private double amount;
-    private String category;
-    private String date;
+    private String Description;
+    private double Amount;
+    private String Category;
+    private String Date;
     private String Subject;
-    private String place;
-    private String type;
+    private String Place;
 }
