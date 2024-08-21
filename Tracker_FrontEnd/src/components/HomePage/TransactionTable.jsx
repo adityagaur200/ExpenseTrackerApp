@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useState, useEffect } from 'react';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -9,22 +9,49 @@ import Paper from '@mui/material/Paper';
 import { MdArrowOutward } from "react-icons/md";
 import { HiOutlineArrowDownLeft } from "react-icons/hi2";
 import { Chip } from '@mui/material';
-function createData(Expenses,category,amount,Transaction) {
-  return { Expenses,category,amount,Transaction};
+
+async function fetchExpenseHistory() {
+  try {
+    const response = await fetch('http://localhost:8090/expense/history');
+    
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error('Fetch error:', error);
+    throw error;
+  }
 }
 
-const rows = [
-  createData('Food',"Food",2344,"out"),
-  createData('Ice cream sandwich',"Food",60,'out'),
-  createData('Shopping',"Shop",7000,'out'),
-  createData('Gingerbread',"Food",70,'in'),
-];
+export default function TransactionTable() {
+  const [rows, setRows] = useState([]);
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(true);
 
+  useEffect(() => {
+    const getExpenses = async () => {
+      try {
+        const data = await fetchExpenseHistory();
+        setRows(data);
+      } catch (error) {
+        setError(error.message);
+      } finally {
+        setLoading(false);
+      }
+    };
 
-export default function BasicTable() {
+    getExpenses();
+  }, []); // Empty dependency array means this effect runs once when the component mounts
+
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error: {error}</p>;
+
   return (
     <TableContainer component={Paper}>
-      <Table aria-label="simple table" size="small">
+      <Table aria-label="Transaction table" size="small">
         <TableHead>
           <TableRow>
             <TableCell align='center'>Expense</TableCell>
@@ -34,22 +61,21 @@ export default function BasicTable() {
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map((row) => (
+          {rows.slice(0,4).map((row, index) => (
             <TableRow
-              key={row.Expenses}
+              key={index} // Using index as key for simplicity; consider a unique identifier if available
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >
-              <TableCell align='center' sx={{"fontSize":13}}>
-                {row.Expenses}
+              <TableCell align='center' sx={{ fontSize: 13 }}>
+                {row.subject}
               </TableCell>
               <TableCell align='center'>
                 <Chip label={row.category} color="primary" size='small' />
               </TableCell>
-              <TableCell align="center" >{row.amount}</TableCell>
-              <TableCell align="center" >
-                {row.Transaction === 'out' ? <MdArrowOutward /> : row.Transaction === 'in' ?<HiOutlineArrowDownLeft /> : null}
+              <TableCell align="center">{row.amount}</TableCell>
+              <TableCell align="center">
+                {row.description}
               </TableCell>
-              
             </TableRow>
           ))}
         </TableBody>

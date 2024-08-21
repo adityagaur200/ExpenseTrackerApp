@@ -80,7 +80,7 @@ const Homepage = () => {
                 </Stack>
             </Box>
             
-            <Box border={'1px solid white'} borderRadius={1} width={500}>
+            <Box border={'1px solid white'} borderRadius={1} width={500} mt={1}>
               <BasicTable/>
             </Box>
         </Stack>
