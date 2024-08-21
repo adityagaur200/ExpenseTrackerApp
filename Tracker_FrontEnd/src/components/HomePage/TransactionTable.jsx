@@ -6,8 +6,6 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-import { MdArrowOutward } from "react-icons/md";
-import { HiOutlineArrowDownLeft } from "react-icons/hi2";
 import { Chip } from '@mui/material';
 
 async function fetchExpenseHistory() {
