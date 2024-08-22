@@ -77,7 +77,7 @@ const Graph = () => {
     {
       data: [
         { id: 0, value: spent, label: 'Spent' },
-        { id: 1, value: budget-spent, label: 'Balance Left' },
+        { id: 1, value: budget, label: 'Balance Left' },
       ],
     },
   ]}
