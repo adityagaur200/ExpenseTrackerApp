@@ -31,7 +31,8 @@ const Graph = () => {
                 const budgetData = await budgetResponse.json();
 
                 // Set budget and expenditure values
-                const totalBudget = budgetData.Amount;
+                const current_data = budgetData.at(-1);
+                const totalBudget = current_data.budget;
                 setBudget(totalBudget);
 
                 const totalExpenditure = expenseData.reduce((total, item) => total + item.amount, 0);
@@ -77,7 +78,7 @@ const Graph = () => {
     {
       data: [
         { id: 0, value: spent, label: 'Spent' },
-        { id: 1, value: budget, label: 'Balance Left' },
+        { id: 1, value: budget - spent, label: 'Balance Left' },
       ],
     },
   ]}

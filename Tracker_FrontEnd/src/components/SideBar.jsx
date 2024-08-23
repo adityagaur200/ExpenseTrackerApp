@@ -41,14 +41,6 @@ const SideBar = () => {
                     </Typography>
                 </Stack>
                 </Link>
-                <Link to={'/Loans'} style={{textDecoration:'none',color:"inherit"}}>
-                    <Stack direction={'row'} alignItems={'center'} gap={2}>
-                        <GiReceiveMoney size={30}/>
-                        <Typography fontSize={18}>
-                            Loans
-                        </Typography>
-                    </Stack>
-                </Link>
                 <Link to={'/Budget'} style={{textDecoration:'none',color:"inherit"}}>
                     <Stack direction={'row'} alignItems={'center'} gap={2}>
                         <TbReportMoney size={30}/>
