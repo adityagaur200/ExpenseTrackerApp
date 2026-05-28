@@ -1,20 +1,30 @@
-# --- Backend Dockerfile ---
+# -------- Stage 1 : Build --------
+FROM maven:3.9.6-eclipse-temurin-17 AS build
 
-# Build stage (Maven + Java 22)
-FROM maven:3.9.6-eclipse-temurin-22 AS build
 WORKDIR /app
 
+# Copy pom.xml first
 COPY pom.xml .
+
+# Download dependencies
 RUN mvn dependency:go-offline
 
-COPY src ./src
+# Copy remaining files
+COPY . .
+
+# Build jar
 RUN mvn clean package -DskipTests
 
-# Runtime stage (JDK 22 only, lighter image)
-FROM openjdk:22-slim
+
+# -------- Stage 2 : Run --------
+FROM eclipse-temurin:17
+
 WORKDIR /app
 
+# Copy jar from build stage
 COPY --from=build /app/target/*.jar app.jar
 
-EXPOSE 8090
+EXPOSE 8080
+
+# Run the application
 ENTRYPOINT ["java","-jar","app.jar"]
